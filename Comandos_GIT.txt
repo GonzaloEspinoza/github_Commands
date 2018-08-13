@@ -1,0 +1,10 @@
+
+
+.regresar el los commit:
+
+$ git reset --hard [id_commit]
+
+2. regresa a commit posteriores
+
+ $ git checkout [id_commit]
+ $ git checkout 739b190

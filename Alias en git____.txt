@@ -1,0 +1,4 @@
+1.- 
+$ git config --global alias.[nombrre_alias] "[comando_git]"
+
+$ git config --global alias.superlog "log --oneline --graph --abbrev-commit --decorate --date=relative --all"

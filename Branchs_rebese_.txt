@@ -1,0 +1,56 @@
+------------------------------------------------------------------------------------
+1.- como solucionar el problema de (master) y (head)
+
+$ git log --oneline
+
+8be609c (HEAD) p4                         --> el head esta en el ultim commit prero no esta master, por lo que se convierte en un branch
+893457e (master) pppp3                    --> el master es la rama princial, esta en l
+21180df p2
+fe79ca1 p1
+
+. por lo que utilizamos:
+
+$ git checkout master
+
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  8be609c p4
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 8be609c                         ----> comando que debe utilizar
+
+Switched to branch 'master'
+
+
+.  $ git branch p4l4 8be609c              ---> crea un rama con el ultimo commit con el nombre "p1l1"
+
+.  posteior a ello nos situamos en el master
+
+$ git checkout  master
+Switched to branch 'master'
+
+
+. posteriormente añadimos el branch al master con el comando:
+
+$ git rebase p4l4
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to p4l4
+
+
+. resultado :
+
+$ git log --oneline
+8be609c (HEAD -> master, p4l4) p4               ---> como se puede ver head y master estan en l ultimo commit
+893457e pppp3
+21180df p2
+fe79ca1 p1
+
+
+----------------------------------------------------------------
+
+2. Craer una rama e y saltar a ella.
+
+$ git checkout -b [nombre_rama_que_crearas]
